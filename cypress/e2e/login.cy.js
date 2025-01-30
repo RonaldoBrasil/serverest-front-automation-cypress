@@ -1,26 +1,43 @@
+import { Access } from "../support/actions/access"
 
  
- it('Teste 01 - login', function() {
+ it('LOGIN com sucesso', function() {
 
-    cy.api({
-      url: 'https://serverest.dev/usuarios',
-      method: 'POST',
-      failOnStatusCode: false,
-      body:{
+  const user = {
+    name: 'Ronaldo Brasil',
+    email: 'emailronaldoteste@gmail.com',
+    password: 'strongpassword12344321',
+    adm: 'false'
 
-        "nome": "Ronaldo Brasil",
-        "email": "emailronaldoteste@gmail.com",
-        "password": "strongpassword12344321",
-        "administrador": "false"
+  }
 
-      }
-    })
+  cy.deleteUserByEmail(user.email)
+  cy.postUser(user)
 
-    cy.visit('https://front.serverest.dev/login') 
-    cy.get('input[data-testid="email"]').type('emailronaldoteste@gmail.com')
-    cy.get('input[data-testid="senha"]').type('strongpassword12344321')
-    cy.get('button[data-testid="entrar"]').click()
-    cy.get('section[class="row espacamento"]').should('be.visible')
+    Access.go()
+    Access.fillform(user)
+    Access.submit()
+    Access.shouldLogin()
+
+})
+
+it.only('LOGIN sem sucesso', function() {
+
+  const user = {
+    name: 'Brasil Ronaldo',
+    email: 'emailbrasilteste@gmail.com',
+    password: 'strongpassword12344321',
+    adm: 'false'
+
+  }
+
+  cy.deleteUserByEmail(user.email)
+
+
+    Access.go()
+    Access.fillform(user)
+    Access.submit()
+    Access.errorMsgShouldBe('Email e/ou senha inválidos')
     
 
-  })
+})
