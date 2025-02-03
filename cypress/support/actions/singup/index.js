@@ -7,3 +7,9 @@ export const Signup = {
     }
 
 }
+
+export const SignupC = {
+    isVisible: function(text){
+         cy.get('h1').should('contain',text)
+    }
+}
