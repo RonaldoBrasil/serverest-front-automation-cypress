@@ -1,7 +1,7 @@
  
 
  export const Home = {
-    shouldBeVisible: function(){
+    isVisible: function(){
         cy.get('section[class="row espacamento"]').should('be.visible')
     }
  }
