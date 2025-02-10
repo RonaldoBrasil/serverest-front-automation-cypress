@@ -1,0 +1,20 @@
+{
+
+    "clear":{
+        "name": "Ronaldo Teste esvaziar campos",
+        "email":"Ronaldo-teste-esvaziar-campos",
+        "password": "teste",
+        "adm": "false"
+    },
+
+    "badEmail":{
+        "name": "Ronaldo Email Ruim",
+        "email":"Ronaldo-teste-email-ruim",
+        "password": "teste",
+        "adm": "false"
+    }
+
+
+     
+   
+}

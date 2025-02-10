@@ -1,0 +1,16 @@
+{
+
+    "user":{
+        "name": "Ronaldo Brasil",
+        "email":"ronaldotestesucesso@gmail.com",
+        "password": "strongpassword12344321",
+        "adm": "false"
+    },
+     
+    "admin": {
+        "name": "Ronaldo Brasil ADM",
+        "email":"ronaldoADM@gmail.com",
+        "password": "strongpassword12344321",
+        "adm": "true"
+    }
+}

@@ -1,0 +1,33 @@
+{
+
+    "unregistered":{
+        "name": "Ronaldo email ruim",
+        "email":"teste-email-incorreto@gmail.com",
+        "password": "strongpassword12344321",
+        "adm": "false"
+    },
+
+    "badPassword":{
+        "name": "Ronaldo Brasil Senha Ruim",
+        "email":"teste-senha-incorreta@gmail.com",
+        "password": "123",
+        "adm": "false"
+    },
+
+    "badEmail":{
+        "name": "Ronaldo Brasil sem @",
+        "email":"emailronaldoteste",
+        "password": "strongpassword12344321",
+        "adm": "false"
+    },
+
+    "clear":{
+        "name": "Ronaldo Teste esvaziar campos",
+        "email":"Ronaldo-teste-esvaziar-campos",
+        "password": "Ronaldo-teste-esvaziar-campos",
+        "adm": "false"
+    }
+
+    
+
+}
