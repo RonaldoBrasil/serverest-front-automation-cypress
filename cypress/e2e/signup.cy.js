@@ -5,18 +5,24 @@ import { Access } from "../support/actions/access"
 
 describe('Dado que estou na página de cadastro', () => {
 
+  beforeEach(function(){
+    cy.fixture('Signup/successful').then(function(successful) {
+      this.successful = successful
+    })
+  })
+
+  beforeEach(function(){
+    cy.fixture('Signup/invalid').then(function(invalid) {
+      this.invalid = invalid
+    })
+  })
+
   context('Quando eu preencho dados de forma correta', function () {
 
+    it('Então de deve ser possível criar uma conta como usuário ', function () {
 
-    it('Então de deve ser possível criar uma conta como usuário ', () => {
-
-      const user = {
-        name: 'Ronaldo Brasil',
-        email: 'ronaldotestesucesso@gmail.com',
-        password: 'strongpassword12344321',
-        adm: 'false'
-      }
-
+      const user = this.successful.user
+        
       cy.deleteUserByEmail(user.email)
       Signup.go()
       Signup.fillform(user)
@@ -24,14 +30,9 @@ describe('Dado que estou na página de cadastro', () => {
       Home.isVisible()
     })
 
-    it('Então de deve ser possível criar uma conta como Administrador ', () => {
+    it('Então de deve ser possível criar uma conta como Administrador ', function () {
 
-      const user = {
-        name: 'Ronaldo Brasil ADM',
-        email: 'ronaldoADM@gmail.com',
-        password: 'strongpassword12344321',
-        adm: 'true'
-      }
+      const user = this.successful.admin
 
       cy.deleteUserByEmail(user.email)
       Signup.go()
@@ -64,13 +65,7 @@ describe('Dado que estou na página de cadastro', () => {
 
     it('Então deve retornar mensagem após esvaziar campos', function () {
 
-      const user = {
-        name: 'Ronaldo Teste esvaziar campos',
-        email: 'Ronaldo-teste-esvaziar-campos',
-        password: 'teste',
-        adm: 'false'
-
-      }
+      const user = this.invalid.clear
 
       Signup.go()
       Signup.fillform(user)
@@ -82,14 +77,15 @@ describe('Dado que estou na página de cadastro', () => {
 
     })
 
-    it('Então não deve permitir logar sem preencher os campos', function () {
+    it('Então não deve permitir logar com o email sem @', function () {
+
+      const user = this.invalid.badEmail
 
       Signup.go()
+      Signup.fillform(user)
       Signup.submit()
-      notification.errorMsgShouldBe('Nome é obrigatório')
-      notification.errorMsgShouldBe('Email é obrigatório')
-      notification.errorMsgShouldBe('Password é obrigatório')
-
+      Signup.outputShouldBe('Inclua um "@" no endereço de e-mail.')
+      
     })
 
   })

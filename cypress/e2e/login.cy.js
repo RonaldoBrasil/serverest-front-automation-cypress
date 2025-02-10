@@ -4,21 +4,27 @@ import { notification } from "../support/actions/components/notification"
 
 describe('Dado que estou na pagina de login',function(){
 
+  beforeEach(function() {
+    cy.fixture('login/successful').then(function(successful) {
+      this.successful=successful
+    })
+  })
+
+  beforeEach(function() {
+    cy.fixture('login/invalid').then(function(invalid) {
+      this.invalid=invalid
+    })
+  })
+
   context('Quando preencho o formulário com dados válidos',function(){
 
     it('Então deve ser possivel realizar o login como usuário', function() {
 
-      const user = {
-        name: 'Ronaldo Brasil',
-        email: 'emailronaldoteste@gmail.com',
-        password: 'strongpassword12344321',
-        adm: 'false'
-    
-      }
+      const user = this.successful.user
     
       cy.deleteUserByEmail(user.email)
       cy.postUser(user)
-    
+
         Access.go()
         Access.fillform(user)
         Access.submit()
@@ -28,13 +34,7 @@ describe('Dado que estou na pagina de login',function(){
 
     it('Então deve ser possivel realizar o login como Admin', function() {
 
-      const user = {
-        name: 'Ronaldo Brasil ADM',
-        email: 'emailronaldoteste-adm@gmail.com',
-        password: 'strongpassword12344321',
-        adm: 'true'
-    
-      }
+      const user = this.successful.admin
     
       cy.deleteUserByEmail(user.email)
       cy.postUser(user)
@@ -52,13 +52,7 @@ describe('Dado que estou na pagina de login',function(){
 
     it('Então não deve ser possivel realizar o login com e-mail incorreto.', function() {
     
-      const user = {
-        name: 'Brasil Ronaldo email ruim',
-        email: 'emailbrasilteste-email-incorreto@gmail.com',
-        password: 'strongpassword12344321',
-        adm: 'false'
-    
-      }
+      const user = this.invalid.unregistered
     
       cy.deleteUserByEmail(user.email)
     
@@ -71,13 +65,7 @@ describe('Dado que estou na pagina de login',function(){
 
     it('Então não deve ser possivel realizar o login com senha incorreta.', function() {
     
-      const user = {
-        name: 'Brasil Ronaldo senha ruim',
-        email: 'emailbrasilteste-senha-incorreta@gmail.com',
-        password: '123',
-        adm: 'false'
-    
-      }
+      const user = this.invalid.badPassword
     
       cy.deleteUserByEmail(user.email)
     
@@ -90,13 +78,7 @@ describe('Dado que estou na pagina de login',function(){
 
     it('Então não deve ser possivel realizar o login sem "@".', function() {
     
-      const user = {
-        name: 'Brasil Ronaldo',
-        email: 'emailbrasilteste',
-        password: 'strongpassword12344321',
-        adm: 'false'
-    
-      }
+      const user = this.invalid.badEmail
     
       cy.deleteUserByEmail(user.email)
     
@@ -118,13 +100,7 @@ describe('Dado que estou na pagina de login',function(){
 
     it('Então deve retornar mensagem após esvaziar campos', function(){
 
-      const user = {
-        name: 'Ronaldo Teste esvaziar campos',
-        email: 'Ronaldo-teste-esvaziar-campos',
-        password: 'teste',
-        adm: 'false'
-    
-      }
+      const user = this.invalid.clear
 
       Access.go()
       Access.fillform(user)
