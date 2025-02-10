@@ -1,6 +1,7 @@
 import { Signup } from "../support/actions/singup"
 import { Home } from "../support/actions/Home"
 import { notification } from "../support/actions/components/notification"
+import { Access } from "../support/actions/access"
 
 describe('Dado que estou na página de cadastro', () => {
 
@@ -89,6 +90,18 @@ describe('Dado que estou na página de cadastro', () => {
       notification.errorMsgShouldBe('Email é obrigatório')
       notification.errorMsgShouldBe('Password é obrigatório')
 
+    })
+
+  })
+
+  context('Quando clico no botão "Entrar"',function(){
+
+    it('Então deve ser possive acessar a página de Login', function(){
+
+      Signup.go()
+      Signup.goToLogin()
+      Access.isVisible()
+      
     })
 
   })
