@@ -5,5 +5,6 @@ exports.el = {
     password: 'input[data-testid="password"]',
     submit: 'button[data-testid="cadastrar"]',
     AdmTrue: 'input[data-testid="checkbox"]',
+    goToLogin: 'a[data-testid="entrar"]'
 
 }

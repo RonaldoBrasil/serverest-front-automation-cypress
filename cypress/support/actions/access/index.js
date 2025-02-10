@@ -8,6 +8,11 @@ export const Access = {
 
     go: function () {
         cy.visit('/login')
+        this.isVisible
+    },
+
+    isVisible: function () {
+        cy.get(el.form)
     },
 
     fillform: function (user) {

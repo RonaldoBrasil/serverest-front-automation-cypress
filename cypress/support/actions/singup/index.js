@@ -14,6 +14,10 @@ export const Signup = {
         cy.get('.form').should('be.visible')
     },
 
+    goToLogin: function (){
+        cy.get(el.goToLogin).click()
+    },
+
     fillform: function (user) {
         if ( user.name )           cy.get(el.name).type(user.name)
         if ( user.email )          cy.get(el.email).type(user.email)
