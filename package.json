@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "cypress": "^14.0.0",
-    "cypress-plugin-api": "^2.11.2"
+    "cypress-plugin-api": "^2.11.2",
+    "cypress-tesults-reporter": "^1.4.1"
   }
 }
