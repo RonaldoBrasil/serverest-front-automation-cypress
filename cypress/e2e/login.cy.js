@@ -8,9 +8,7 @@ describe('Dado que estou na pagina de login',function(){
     cy.fixture('login/successful').then(function(successful) {
       this.successful=successful
     })
-  })
 
-  beforeEach(function() {
     cy.fixture('login/invalid').then(function(invalid) {
       this.invalid=invalid
     })
