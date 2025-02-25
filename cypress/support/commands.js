@@ -73,7 +73,7 @@ Cypress.Commands.add('apiLogin', (user) => {
 
 })
 
-Cypress.Commands.add('postProduct', (admin , product) => {
+Cypress.Commands.add('postProduct', (admin, product) => {
 
   cy.apiLogin(admin).then(function (response) {
     cy.api({
@@ -123,9 +123,19 @@ Cypress.Commands.add('deleteProductByName', (admin, name) => {
   })
 })
 
-Cypress.Commands.add('adjustUserData', function(user){
+Cypress.Commands.add('adjustUserData', function (user) {
   cy.deleteUserByEmail(user.email)
   cy.postUser(user)
+})
+
+Cypress.Commands.add('addProductToCart', function (admin, product) {
+  cy.deleteProductByName(admin, product.nome)
+  cy.postProduct(admin, product)
+  cy.getProductByName(product.nome).then(info => {
+    expect(product).to.not.be.undefined
+    const productId = info._id
+    window.localStorage.setItem('products', `[{"_id":"${productId}","nome":"${product.nome}","preco":${product.preco},"quantidade":${product.quantidade},"descricao":"${product.descricao}","amount":${product.amount}}]`)
+  })
 })
 
 
