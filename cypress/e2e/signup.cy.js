@@ -19,7 +19,7 @@ describe('Dado que estou na página de cadastro', () => {
 
   context('Quando eu preencho dados de forma correta', function () {
 
-    it('Então de deve ser possível criar uma conta como usuário ', function () {
+    it.only('Então de deve ser possível criar uma conta como usuário ', function () {
 
       const user = this.successful.user
         
