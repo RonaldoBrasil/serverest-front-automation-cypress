@@ -27,7 +27,8 @@
         "nome": "Mouse Gamer",
         "preco": 150.00,
         "descricao": "Mouse gamer com sensor de alta precisão e botões programáveis.",
-        "quantidade": 30
+        "quantidade": 30 ,
+        "amount": 5
     },
 
     "ssd" :
@@ -35,7 +36,8 @@
         "nome": "SSD 1TB",
         "preco": 600.00,
         "descricao": "SSD de 1TB com velocidade de leitura e gravação rápida.",
-        "quantidade": 20
+        "quantidade": 20,
+        "amount": 5
     }
 
 }
