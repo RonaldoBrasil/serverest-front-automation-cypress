@@ -1,0 +1,21 @@
+name: Chrome UI Tests
+on: push
+jobs:
+  cypress-run:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      # Instala o Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.10.0' # ou a versão do Node.js que você está usando
+
+      # Instala as dependências do projeto (incluindo Cypress e cypress-tesults-reporter)
+      - name: Install dependencies
+        run: npm install
+
+      # Executa o runner.js
+      - name: Run Cypress tests and upload to Tesults
+        run: node runner.js
