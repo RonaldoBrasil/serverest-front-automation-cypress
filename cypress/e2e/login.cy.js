@@ -1,5 +1,5 @@
 import { Access } from "../support/actions/access"
-import { Notification } from "../support/actions/components/Notification"
+import { Notification } from "../support/actions/components/notification"
 
 
 describe('Dado que estou na pagina de login',function(){

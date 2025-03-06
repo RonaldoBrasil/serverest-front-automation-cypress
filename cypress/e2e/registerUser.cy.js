@@ -1,6 +1,6 @@
 import { RegisterUser } from "../support/actions/Admin/registerUser"
 import { UserList } from "../support/actions/Admin/userList"
-import { Notification } from "../support/actions/components/Notification"
+import { Notification } from "../support/actions/components/notification"
 
 describe('Dado que estou na página de Registrar Usuário', function () {
 

@@ -1,6 +1,6 @@
 import { ProductRegister } from "../support/actions/Admin/productRegister"
 import { ProductList } from "../support/actions/Admin/productList"
-import { Notification } from "../support/actions/components/Notification"
+import { Notification } from "../support/actions/components/notification"
 
 
 describe('Dado que estou na página de Cadastro de Produtos', function () {

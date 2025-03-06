@@ -1,6 +1,6 @@
 import { Signup } from "../support/actions/singup"
 import { Home } from "../support/actions/Home"
-import { Notification } from "../support/actions/components/Notification"
+import { Notification } from "../support/actions/components/notification"
 import { Access } from "../support/actions/access"
 
 describe('Dado que estou na página de cadastro', () => {
