@@ -83,7 +83,7 @@ describe('Dado que estou na pagina de login',function(){
         Access.go()
         Access.fillform(user)
         Access.submit()
-        Access.outputShouldBe('Inclua um "@" no endereço de e-mail')
+        Access.outputShouldBe("Please include an '@' in the email address.")
         
     })
 

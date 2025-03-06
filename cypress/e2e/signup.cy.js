@@ -84,7 +84,7 @@ describe('Dado que estou na página de cadastro', () => {
       Signup.go()
       Signup.fillform(user)
       Signup.submit()
-      Signup.outputShouldBe('Inclua um "@" no endereço de e-mail.')
+      Signup.outputShouldBe("Please include an '@' in the email address.")
       
     })
 

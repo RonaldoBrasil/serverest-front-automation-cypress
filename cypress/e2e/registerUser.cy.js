@@ -101,7 +101,7 @@ describe('Dado que estou na página de Registrar Usuário', function () {
             RegisterUser.go(admin)
             RegisterUser.fillform(user)
             RegisterUser.submit()
-            RegisterUser.outputShouldBe('Inclua um "@" no endereço de e-mail.')
+            RegisterUser.outputShouldBe("Please include an '@' in the email address.")
 
         })
 
