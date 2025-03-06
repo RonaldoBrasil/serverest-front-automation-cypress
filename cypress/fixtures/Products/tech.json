@@ -16,7 +16,7 @@
     },
     "monitor" : 
     {
-        "nome": "Monitor 24\"",
+        "nome": "Monitor 24",
         "preco": 1200.00,
         "descricao": "Monitor Full HD de 24 polegadas com taxa de atualização de 144Hz.",
         "quantidade": 15
@@ -37,7 +37,8 @@
         "preco": 600.00,
         "descricao": "SSD de 1TB com velocidade de leitura e gravação rápida.",
         "quantidade": 20,
-        "amount": 5
+        "amount": 5,
+        "image": "ssd.jpeg"
     }
 
 }

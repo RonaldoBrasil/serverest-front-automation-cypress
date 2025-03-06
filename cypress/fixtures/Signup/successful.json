@@ -12,5 +12,12 @@
         "email":"ronaldoADM@gmail.com",
         "password": "strongpassword12344321",
         "adm": "true"
+    },
+
+    "adminUser": {
+        "name": "Ronaldo Brasil user ADM",
+        "email":"ronaldoqa@admgmail.com",
+        "password": "strongpassword12344321",
+        "adm": "true"
     }
 }

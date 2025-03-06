@@ -12,7 +12,7 @@ export const Access = {
     },
 
     isVisible: function () {
-        cy.get(el.form)
+        cy.get(el.form).should('be.visible')
     },
 
     fillform: function (user) {
