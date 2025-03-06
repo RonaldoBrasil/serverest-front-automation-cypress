@@ -1,6 +1,6 @@
 import { Cart } from "../support/actions/cart"
 
-describe.only('Dado que estou na página ed Carrinho', function () {
+describe('Dado que estou na página ed Carrinho', function () {
 
     beforeEach(function () {
         cy.fixture('login/successful').then(function (successful) {

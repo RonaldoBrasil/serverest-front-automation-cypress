@@ -21,7 +21,7 @@ describe('Dado que estou na Lista de Compras', function () {
         ProductList.go(user)
         ProductList.goToHome()
 
-    }),
+    })
 
         context('Quando a lista está vazia', function () {
 
