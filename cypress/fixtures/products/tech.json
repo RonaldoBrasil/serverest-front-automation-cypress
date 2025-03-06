@@ -1,0 +1,35 @@
+{
+    "laptop": {
+        "nome": "Laptop Gamer",
+        "preco": 4500.00,
+        "descricao": "Laptop de alto desempenho com placa de vídeo dedicada e 16GB de RAM.",
+        "quantidade": 10
+    },
+    "teclado": {
+        "nome": "Teclado Mecânico",
+        "preco": 250.00,
+        "descricao": "Teclado mecânico com retroiluminação RGB e switches mecânicos.",
+        "quantidade": 25
+    },
+    "monitor": {
+        "nome": "Monitor 24",
+        "preco": 1200.00,
+        "descricao": "Monitor Full HD de 24 polegadas com taxa de atualização de 144Hz.",
+        "quantidade": 15
+    },
+    "mouse": {
+        "nome": "Mouse Gamer",
+        "preco": 150.00,
+        "descricao": "Mouse gamer com sensor de alta precisão e botões programáveis.",
+        "quantidade": 30,
+        "amount": 5
+    },
+    "ssd": {
+        "nome": "SSD 1TB",
+        "preco": 600.00,
+        "descricao": "SSD de 1TB com velocidade de leitura e gravação rápida.",
+        "quantidade": 20,
+        "amount": 5,
+        "image": "ssd.jpg"
+    }
+}
