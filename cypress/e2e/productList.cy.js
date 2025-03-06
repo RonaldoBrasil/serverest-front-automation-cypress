@@ -23,9 +23,9 @@ describe('Dado que estou na Lista de Compras', function () {
 
     })
 
-        context('Quando a lista está vazia', function () {
+    context('Quando a lista está vazia', function () {
 
-            it('Então o sistema deve retornar que o carrinho está vazio', function () {
+        it('Então o sistema deve retornar que o carrinho está vazio', function () {
 
                 const user = this.successful.user
                 cy.adjustUserData(user)
@@ -35,8 +35,8 @@ describe('Dado que estou na Lista de Compras', function () {
 
 
 
-            })
         })
+    })
 
     context('Quando a lista possui produto', function () {
 

@@ -1,6 +1,6 @@
 import { RegisterUser } from "../support/actions/Admin/registerUser"
 import { UserList } from "../support/actions/Admin/userList"
-import { notification } from "../support/actions/components/notification"
+import { Notification } from "../support/actions/components/Notification"
 
 describe('Dado que estou na página de Registrar Usuário', function () {
 
@@ -69,7 +69,7 @@ describe('Dado que estou na página de Registrar Usuário', function () {
                 RegisterUser.go(admin)
                 RegisterUser.fillform(required)
                 RegisterUser.submit()
-                notification.errorMsgShouldBe(required.output)
+                Notification.errorMsgShouldBe(required.output)
 
             })
         })
@@ -85,9 +85,9 @@ describe('Dado que estou na página de Registrar Usuário', function () {
             RegisterUser.fillform(user)
             RegisterUser.clearform()
             RegisterUser.submit()
-            notification.errorMsgShouldBe('Nome não pode ficar em branco')
-            notification.errorMsgShouldBe('Email não pode ficar em branco')
-            notification.errorMsgShouldBe('Password não pode ficar em branco')
+            Notification.errorMsgShouldBe('Nome não pode ficar em branco')
+            Notification.errorMsgShouldBe('Email não pode ficar em branco')
+            Notification.errorMsgShouldBe('Password não pode ficar em branco')
 
         })
 

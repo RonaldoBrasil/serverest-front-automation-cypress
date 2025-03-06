@@ -1,6 +1,6 @@
 import { Signup } from "../support/actions/singup"
 import { Home } from "../support/actions/Home"
-import { notification } from "../support/actions/components/notification"
+import { Notification } from "../support/actions/components/Notification"
 import { Access } from "../support/actions/access"
 
 describe('Dado que estou na página de cadastro', () => {
@@ -58,7 +58,7 @@ describe('Dado que estou na página de cadastro', () => {
         Signup.go()
         Signup.fillform(required)
         Signup.submit()
-        notification.errorMsgShouldBe(required.output)
+        Notification.errorMsgShouldBe(required.output)
         
       })
     })
@@ -71,9 +71,9 @@ describe('Dado que estou na página de cadastro', () => {
       Signup.fillform(user)
       Signup.clearform()
       Signup.submit()
-      notification.errorMsgShouldBe('Nome não pode ficar em branco')
-      notification.errorMsgShouldBe('Email não pode ficar em branco')
-      notification.errorMsgShouldBe('Password não pode ficar em branco')
+      Notification.errorMsgShouldBe('Nome não pode ficar em branco')
+      Notification.errorMsgShouldBe('Email não pode ficar em branco')
+      Notification.errorMsgShouldBe('Password não pode ficar em branco')
 
     })
 

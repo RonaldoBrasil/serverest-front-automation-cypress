@@ -1,5 +1,5 @@
 import { Access } from "../support/actions/access"
-import { notification } from "../support/actions/components/notification"
+import { Notification } from "../support/actions/components/Notification"
 
 
 describe('Dado que estou na pagina de login',function(){
@@ -57,7 +57,7 @@ describe('Dado que estou na pagina de login',function(){
         Access.go()
         Access.fillform(user)
         Access.submit()
-        notification.errorMsgShouldBe('Email e/ou senha inválidos')
+        Notification.errorMsgShouldBe('Email e/ou senha inválidos')
         
     })
 
@@ -70,7 +70,7 @@ describe('Dado que estou na pagina de login',function(){
         Access.go()
         Access.fillform(user)
         Access.submit()
-        notification.errorMsgShouldBe('Email e/ou senha inválidos')
+        Notification.errorMsgShouldBe('Email e/ou senha inválidos')
         
     })
 
@@ -91,8 +91,8 @@ describe('Dado que estou na pagina de login',function(){
 
       Access.go()
       Access.submit()
-      notification.errorMsgShouldBe('Email é obrigatório')
-      notification.errorMsgShouldBe('Password é obrigatório')
+      Notification.errorMsgShouldBe('Email é obrigatório')
+      Notification.errorMsgShouldBe('Password é obrigatório')
 
     })
 
@@ -104,8 +104,8 @@ describe('Dado que estou na pagina de login',function(){
       Access.fillform(user)
       Access.clearform()
       Access.submit()
-      notification.errorMsgShouldBe('Email não pode ficar em branco')
-      notification.errorMsgShouldBe('Password não pode ficar em branco')
+      Notification.errorMsgShouldBe('Email não pode ficar em branco')
+      Notification.errorMsgShouldBe('Password não pode ficar em branco')
 
     })
 
