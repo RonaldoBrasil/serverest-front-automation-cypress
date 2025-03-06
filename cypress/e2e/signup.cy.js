@@ -6,13 +6,13 @@ import { Access } from "../support/actions/access"
 describe('Dado que estou na página de cadastro', () => {
 
   beforeEach(function(){
-    cy.fixture('Signup/successful').then(function(successful) {
+    cy.fixture('signup/successful').then(function(successful) {
       this.successful = successful
     })
   })
 
   beforeEach(function(){
-    cy.fixture('Signup/invalid').then(function(invalid) {
+    cy.fixture('signup/invalid').then(function(invalid) {
       this.invalid = invalid
     })
   })
