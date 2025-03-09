@@ -1,12 +1,8 @@
 name: Chrome UI Tests
-
-on: 
-  push:
-
+on: push
 jobs:
   cypress-run:
     runs-on: ubuntu-24.04
-
     steps:
       - uses: actions/checkout@v4
 
@@ -15,14 +11,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20.10.0' # ou a versão do Node.js que você está usando
-
-      # Configura a localidade para português
-      - name: Set locale to Portuguese
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y language-pack-pt
-          sudo locale-gen pt_BR.UTF-8
-          sudo update-locale LANG=pt_BR.UTF-8
 
       # Instala as dependências do projeto (incluindo Cypress e cypress-tesults-reporter)
       - name: Install dependencies
